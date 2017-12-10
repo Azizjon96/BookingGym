@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "statuses">
+    
+    <resultMap id = "resultStatuses" type = "BookingGym.model.Statuses"> 
+       <result property = "s_id_status" column = "s_id_status"/>
+       <result property = "s_processing" column = "s_processing"/> 
+       <result property = "s_approved" column = "s_approved"/> 
+       <result property = "s_failure" column = "s_failure"/> 
+    </resultMap> 
+
+    <select id = "selectAll" resultMap = "resultStatuses"> 
+       SELECT * FROM statuses;  
+    </select> 
+ 
+    <select id = "selectById" parameterType = "int" resultMap = "resultStatuses"> 
+       SELECT * FROM statuses WHERE s_id_status = #{s_id_status}; 
+    </select> 
+    
+    <insert id = "insert" parameterType = "BookingGym.model.Statuses"> 
+       INSERT INTO statuses (s_id_status, s_processing, s_approved , s_failure  
+       VALUES (#{s_id_status}, #{s_processing}, #{s_approved}, #{s_failure});     
+    </insert>
+    
+    <update id = "update" parameterType = "BookingGym.model.Statuses"> 
+       UPDATE statuses SET 
+        s_processing = #{s_processing}, 
+        s_approved = #{s_approved},
+        s_failure = #{s_failure}
+        WHERE s_id_status = #{s_id_status}; 
+    </update>
+
+    <delete id = "deleteByUser" parameterType = "BookingGym.model.Statuses"> 
+       DELETE from statuses WHERE s_id_status = #{s_id_status}; 
+    </delete>
+</mapper> 
+

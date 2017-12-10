@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
-public class JsonReservationMaper {
+
+public class JsonReservationMapper {
     public static Reservation fromJson(String json)
     {
         try {

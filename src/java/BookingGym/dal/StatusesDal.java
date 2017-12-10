@@ -20,13 +20,4 @@ public class StatusesDal {
     public int update(Statuses statuses) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public int update(BookingGym.model.Statuses statuses) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int insert(BookingGym.model.Statuses statuses) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

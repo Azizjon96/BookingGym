@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class JsonStatusesMapper {
    public static Statuses fromJson(String json)
     {
-    {
         try {
             ObjectMapper mapper = new ObjectMapper();
             Statuses statuses =mapper.readValue(json,Statuses.class);
@@ -21,8 +20,6 @@ public class JsonStatusesMapper {
         }
         return null;
     }
-
- 
     
     public static String toJson(Statuses statuses)
     {

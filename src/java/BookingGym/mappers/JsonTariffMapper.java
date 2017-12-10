@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
-public class JsonTariffMaper {
+public class JsonTariffMapper {
      public static Tariff fromJson(String json)
     {
         try {

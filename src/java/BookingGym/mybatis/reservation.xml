@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "reservation">
+    <resultMap id = "resultReservation" type = "BookingGym.model.Reservation"> 
+       <result property = "r_id_reservation" column = "r_id_reservation"/> 
+       <result property = "r_id_client" column = "r_id_client"/> 
+       <result property = "r_hall" column = "r_hall"/> 
+       <result property = "r_begin_visits" column = "r_begin_visits"/> 
+       <result property = "r_end_visits" column = "r_end_visits"/> 
+       <result property = "r_id_tariff" column = "r_id_tariff"/> 
+       <result property = "r_id_status" column = "r_id_status"/> 
+    </resultMap> 
+
+    <select id = "selectAll" resultMap = "resultReservation"> 
+       SELECT * FROM reservation;  
+    </select> 
+ 
+    <select id = "selectById" parameterType = "int" resultMap = "resultReservation"> 
+       SELECT * FROM reservation WHERE r_id_reservation = #{r_id_reservation}; 
+    </select> 
+    
+    <insert id = "insert" parameterType = "BookingGym.model.Reservation"> 
+       INSERT INTO news 
+            (r_id_reservation, 
+             r_id_client, 
+             r_hall,
+             r_begin_visits,
+             r_end_visits,
+             r_id_tariff,
+             r_id_status)  
+       VALUES 
+            (#{r_id_reservation}, 
+             #{r_id_client}, 
+             #{r_hall},
+             #{r_begin_visits},
+             #{r_end_visits},
+             #{r_id_tariff},
+             #{r_id_status});     
+    </insert>
+    
+    <update id = "update" parameterType = "BookingGym.model.Reservation"> 
+       UPDATE news SET 
+        r_hall = #{r_hall}, 
+        r_id_client = #{r_id_client}, 
+        begin_visits = #{begin_visits},
+        r_end_visits = #{r_end_visits},
+        r_id_tariff = #{r_id_tariff},
+        r_id_status = #{r_id_status}
+        WHERE r_id_reservation = #{r_id_reservation}; 
+    </update>
+
+    <delete id = "deleteByReservation" parameterType = "BookingGym.model.Reservation"> 
+       DELETE from reservation WHERE id = #{r_id_reservation}; 
+    </delete>
+</mapper> 
+
+

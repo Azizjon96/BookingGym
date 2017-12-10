@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "clients">
+    
+    <resultMap id = "resultClients" type = "BookingGym.model.Clients"> 
+       <result property = "c_id_client" column = "c_id_client"/> 
+       <result property = "c_FIO" column = "c_FIO"/> 
+       <result property = "c_phone" column = "c_phone"/> 
+    </resultMap> 
+
+    <select id = "selectAll" resultMap = "resultClients"> 
+        SELECT * FROM clients;  
+    </select> 
+ 
+    <select id = "selectById" parameterType = "int" resultMap = "resultClients"> 
+        SELECT * FROM clients WHERE c_id_client = #{c_id_client}; 
+    </select> 
+    
+    <select id = "selectByPhone" parameterType = "varchar" resultMap = "resultClients"> 
+        SELECT * FROM clients WHERE c_phone = #{c_phone}; 
+    </select> 
+    
+    <insert id = "insert" parameterType = "BookingGym.model.Tariff"> 
+       INSERT INTO tariff 
+            (c_id_client, 
+             c_FIO,
+             c_phone;
+       VALUES 
+            (#{c_id_client}, 
+             #{c_FIO}, 
+             #{c_phone};    
+    </insert>
+    
+    <select id = "selectReservation" parameterType="int" resultMap="BookingGym.resultReservation">  
+        select * from reservation where r_id_client = #{c_id_client}
+   </select>
+</mapper> 
+

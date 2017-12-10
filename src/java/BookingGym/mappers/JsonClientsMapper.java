@@ -7,14 +7,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
-class JsonClientsMapper {
+public class JsonClientsMapper {
     
 
     public static Clients fromJson(String json)
     {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            Clients clients =mapper.readValue(json,Clients.class);
+            Clients clients = mapper.readValue(json,Clients.class);
             return clients;
         } catch (IOException ex) {
             Logger.getLogger(JsonClientsMapper.class.getName()).log(Level.SEVERE, null, ex);
