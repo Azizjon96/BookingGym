@@ -1,0 +1,34 @@
+
+package BookingGym.controllers;
+
+import BookingGym.dal.StatusesDal;
+import BookingGym.model.Statuses;
+import java.util.List;
+
+
+public class StatusesController {
+    protected StatusesDal statusesDal;
+    public StatusesController() {
+        statusesDal= new StatusesDal();
+    }
+    
+    public List<Statuses> getAllStatusess()
+    {
+        return statusesDal.selectAll();
+    }
+    
+    public Statuses getStatusesById(int id)
+    {
+        return statusesDal.selectById(id);
+    }
+    
+    public int insertStatuses(Statuses statuses)
+    {
+        return statusesDal.insert(statuses);
+    }
+    
+     public int updateStatuses(Statuses statuses)
+    {
+        return statusesDal.update(statuses);
+    }
+}
