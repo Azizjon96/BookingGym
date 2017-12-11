@@ -1,4 +1,3 @@
-
 package BookingGym.controllers;
 
 import BookingGym.dal.TariffDal;
@@ -16,7 +15,7 @@ public class TariffController {
         return tariffDal.selectAll();
     }
     
-    public Tariff getTariffById(int id)
+    public Tariff getTariffById(String id)
     {
         return tariffDal.selectById(id);
     }

@@ -17,7 +17,7 @@ public class StatusesController {
         return statusesDal.selectAll();
     }
     
-    public Statuses getStatusesById(int id)
+    public Statuses getStatusesById(String id)
     {
         return statusesDal.selectById(id);
     }

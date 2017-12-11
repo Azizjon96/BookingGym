@@ -15,7 +15,7 @@ public class ClientsController {
         return clientsDal.selectAll();
     }
     
-    public Clients getClientsById(int id)
+    public Clients getClientsById(String id)
     {
         return clientsDal.selectById(id);
     }

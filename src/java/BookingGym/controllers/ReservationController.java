@@ -17,7 +17,7 @@ public class ReservationController {
         return reservationDal.selectAll();
     }
     
-    public Reservation getReservationById(int id)
+    public Reservation getReservationById(String id)
     {
         return reservationDal.selectById(id);
     }
