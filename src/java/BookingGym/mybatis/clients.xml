@@ -5,7 +5,9 @@
     
     <resultMap id = "resultClients" type = "BookingGym.model.Clients"> 
        <result property = "c_id_client" column = "c_id_client"/> 
-       <result property = "c_FIO" column = "c_FIO"/> 
+       <result property = "c_surname" column = "c_surname"/> 
+       <result property = "c_name" column = "c_name"/> 
+       <result property = "c_lastname" column = "c_lastname"/> 
        <result property = "c_phone" column = "c_phone"/> 
     </resultMap> 
 
@@ -13,27 +15,41 @@
         SELECT * FROM clients;  
     </select> 
  
-    <select id = "selectById" parameterType = "int" resultMap = "resultClients"> 
+    <select id = "selectById" parameterType = "String" resultMap = "resultClients"> 
         SELECT * FROM clients WHERE c_id_client = #{c_id_client}; 
     </select> 
     
-    <select id = "selectByPhone" parameterType = "varchar" resultMap = "resultClients"> 
+    <select id = "selectByPhone" parameterType = "String" resultMap = "resultClients"> 
         SELECT * FROM clients WHERE c_phone = #{c_phone}; 
     </select> 
     
     <insert id = "insert" parameterType = "BookingGym.model.Tariff"> 
        INSERT INTO tariff 
             (c_id_client, 
-             c_FIO,
+             c_surname,
+             c_name,
+             c_lastname,
              c_phone;
        VALUES 
             (#{c_id_client}, 
-             #{c_FIO}, 
+             #{c_surname}, 
+             #{c_name}, 
+             #{c_lastname}, 
              #{c_phone};    
     </insert>
     
-    <select id = "selectReservation" parameterType="int" resultMap="BookingGym.resultReservation">  
-        select * from reservation where r_id_client = #{c_id_client}
-   </select>
+    <update id = "update" parameterType = "BookingGym.model.Clients"> 
+       UPDATE clients SET 
+        c_surname = #{c_surname}, 
+        c_name = #{c_name},
+        c_lastname = #{c_lastname},
+        c_phone = #{c_phone}
+        WHERE c_id_client = #{c_id_client}; 
+    </update>
+
+     <delete id = "delete" parameterType = "String"> 
+       DELETE from clients WHERE c_id_client = #{c_id_client}; 
+     </delete>
+     
 </mapper> 
 

@@ -15,7 +15,7 @@
        SELECT * FROM tariff;  
     </select> 
  
-    <select id = "selectById" parameterType = "int" resultMap = "resultTariff"> 
+    <select id = "selectById" parameterType = "String" resultMap = "resultTariff"> 
        SELECT * FROM tariff WHERE t_id_tariff = #{t_id_tariff}; 
     </select> 
     
@@ -43,8 +43,8 @@
         WHERE t_id_tariff = #{t_id_tariff}; 
     </update>
 
-    <delete id = "deleteByNews" parameterType = "BookingGym.model.Tariff"> 
-       DELETE tariff news WHERE t_id_tariff = #{t_id_tariff}; 
+    <delete id = "delete" parameterType = "String"> 
+       DELETE tariff WHERE t_id_tariff = #{t_id_tariff}; 
     </delete>
 </mapper> 
 

@@ -14,7 +14,7 @@
        SELECT * FROM statuses;  
     </select> 
  
-    <select id = "selectById" parameterType = "int" resultMap = "resultStatuses"> 
+    <select id = "selectById" parameterType = "String" resultMap = "resultStatuses"> 
        SELECT * FROM statuses WHERE s_id_status = #{s_id_status}; 
     </select> 
     
@@ -31,7 +31,7 @@
         WHERE s_id_status = #{s_id_status}; 
     </update>
 
-    <delete id = "deleteByUser" parameterType = "BookingGym.model.Statuses"> 
+    <delete id = "delete" parameterType = "String"> 
        DELETE from statuses WHERE s_id_status = #{s_id_status}; 
     </delete>
 </mapper> 
