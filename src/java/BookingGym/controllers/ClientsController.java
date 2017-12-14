@@ -10,7 +10,7 @@ public class ClientsController {
         clientsDal= new ClientsDal();
     }
     
-    public List<Clients> getAllClientses()
+    public List<Clients> getAllClients()
     {
         return clientsDal.selectAll();
     }

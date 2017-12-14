@@ -18,10 +18,10 @@
   </environments> 
   
   <mappers> 
-    <mapper resource="news/mybatis/clients.xml"/> 
-    <mapper resource="news/mybatis/reservation.xml"/> 
-    <mapper resource="news/mybatis/ststuses.xml"/>
-    <mapper resource="news/mybatis/tariff.xml"/>  
+    <mapper resource="BookingGym/mybatis/clients.xml"/> 
+    <mapper resource="BookingGym/mybatis/reservation.xml"/> 
+    <mapper resource="BookingGym/mybatis/statuses.xml"/>
+    <mapper resource="BookingGym/mybatis/tariff.xml"/>  
   </mappers> 
 </configuration>
 
