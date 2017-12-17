@@ -1,12 +1,14 @@
-
 package BookingGym.controllers;
-
 
 import BookingGym.dal.ReservationDal;
 import BookingGym.model.Reservation;
 import java.util.List;
 
 public class ReservationController {
+
+    public static Reservation getClientsById(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     protected ReservationDal reservationDal;
     public ReservationController() {
         reservationDal= new ReservationDal();

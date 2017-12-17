@@ -1,5 +1,8 @@
 package BookingGym.api;
-
+/**
+ *
+ * @author Azizjon
+ */
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,16 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BookingGym.mappers.JsonClientsMapper;
-import BookingGym.controllers.ClientsController;
-import BookingGym.model.Clients;
+import BookingGym.mappers.JsonStatusesMapper;
+import BookingGym.controllers.StatusesController;
+import BookingGym.model.Statuses;
 
-/**
- *
- * @author Azizjon
- */
-@WebServlet(name = "GetClientsById", urlPatterns = {"/GetClientsById"})
-public class GetClientsById extends HttpServlet {
+@WebServlet(name = "GetStatusesById", urlPatterns = {"/GetStatusesById"})
+public class GetStatusesById extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +31,10 @@ public class GetClientsById extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
     //    int id =  Integer.parseInt(request.getParameter("id"));
         try (PrintWriter out = response.getWriter()) {
-            ClientsController clientsController = new ClientsController();
+            StatusesController statusesController = new StatusesController();
             
-            Clients clients =  clientsController.getClientsById("1");
-            String json=JsonClientsMapper.toJson(clients);
+            Statuses statuses =  statusesController.getStatusesById("1");
+            String json=JsonStatusesMapper.toJson(statuses);
             out.println(json);
         }
     }
@@ -80,3 +79,4 @@ public class GetClientsById extends HttpServlet {
     }// </editor-fold>
 
 }
+

@@ -1,5 +1,9 @@
 package BookingGym.api;
 
+/**
+ *
+ * @author Azizjon
+ */
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,16 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BookingGym.mappers.JsonClientsMapper;
-import BookingGym.controllers.ClientsController;
-import BookingGym.model.Clients;
+import BookingGym.mappers.JsonTariffMapper;
+import BookingGym.controllers.TariffController;
+import BookingGym.model.Tariff;
 
-/**
- *
- * @author Azizjon
- */
-@WebServlet(name = "GetClientsById", urlPatterns = {"/GetClientsById"})
-public class GetClientsById extends HttpServlet {
+
+@WebServlet(name = "InsertTariff", urlPatterns = {"/InsertTariff"})
+public class InsertTariff extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,16 +28,17 @@ public class GetClientsById extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected  void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-    //    int id =  Integer.parseInt(request.getParameter("id"));
-        try (PrintWriter out = response.getWriter()) {
-            ClientsController clientsController = new ClientsController();
-            
-            Clients clients =  clientsController.getClientsById("1");
-            String json=JsonClientsMapper.toJson(clients);
-            out.println(json);
+        String jsonObject = request.getParameter("json");
+        
+        try (PrintWriter out = response.getWriter()) 
+        {
+           Tariff tariff = JsonTariffMapper.fromJson(jsonObject);
+           TariffController  tariffController = new TariffController();
+           int res=tariffController.insertTariff(tariff);
+           out.print(res);
         }
     }
 

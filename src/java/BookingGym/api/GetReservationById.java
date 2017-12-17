@@ -7,16 +7,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BookingGym.mappers.JsonClientsMapper;
-import BookingGym.controllers.ClientsController;
-import BookingGym.model.Clients;
+import BookingGym.mappers.JsonReservationMapper;
+import BookingGym.controllers.ReservationController;
+import BookingGym.model.Reservation;
 
 /**
  *
  * @author Azizjon
  */
-@WebServlet(name = "GetClientsById", urlPatterns = {"/GetClientsById"})
-public class GetClientsById extends HttpServlet {
+@WebServlet(name = "GetReservationById", urlPatterns = {"/GetReservationById"})
+public class GetReservationById extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +32,10 @@ public class GetClientsById extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
     //    int id =  Integer.parseInt(request.getParameter("id"));
         try (PrintWriter out = response.getWriter()) {
-            ClientsController clientsController = new ClientsController();
+            ReservationController reservationController = new ReservationController();
             
-            Clients clients =  clientsController.getClientsById("1");
-            String json=JsonClientsMapper.toJson(clients);
+            Reservation reservation =  ReservationController.getClientsById("1");
+            String json=JsonReservationMapper.toJson(reservation);
             out.println(json);
         }
     }

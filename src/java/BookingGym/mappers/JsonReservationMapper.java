@@ -47,4 +47,8 @@ public class JsonReservationMapper {
         return null;
         
     }
+
+    public static Reservation fromJSON(String jsonObject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
