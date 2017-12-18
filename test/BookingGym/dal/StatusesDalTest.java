@@ -66,17 +66,13 @@ System.out.println("delete");
           Statuses   statuses = null;
           StatusesDal instance = new   StatusesDal();
         int expResult = 0;
-        int result = instance.delete(valueOf( statuses));
+        int result = instance.delete( statuses);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     private String valueOf(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String valueOf(Statuses statuses) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

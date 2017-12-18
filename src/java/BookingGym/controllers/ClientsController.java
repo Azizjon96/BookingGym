@@ -30,7 +30,10 @@ public class ClientsController {
         return clientsDal.update(clients);
     }
     
-     
+      public int deleteClients(Clients clients)
+    {
+        return clientsDal.delete(clients);
+    }
     
      
      

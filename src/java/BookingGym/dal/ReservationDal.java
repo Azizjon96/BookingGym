@@ -48,10 +48,10 @@ public class ReservationDal extends BaseDal {
       return count;
     }
     
-    public int delete(String id)
+    public int delete(Reservation reservation)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
-      int count =  session.delete("reservation.delete",id);
+      int count =  session.delete("reservation.delete",reservation);
       session.commit();
       session.close();
       return count;

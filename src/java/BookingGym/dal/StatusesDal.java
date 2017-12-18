@@ -41,10 +41,10 @@ public class StatusesDal extends BaseDal
       return count;
     }
     
-    public int delete(String id)
+    public int delete(Statuses statuses)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
-      int count =  session.delete("statuses.delete",id);
+      int count =  session.delete("statuses.delete",statuses);
       session.commit();
       session.close();
       return count;

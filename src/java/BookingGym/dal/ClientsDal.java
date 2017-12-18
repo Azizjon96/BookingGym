@@ -27,10 +27,10 @@ public ClientsDal() {
       return count;
     }
     
-    public int delete(String id)
+    public int delete(Clients clients)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
-      int count =  session.delete("clients.delete",id);
+      int count =  session.delete("clients.delete",clients);
       session.commit();
       session.close();
       return count;
@@ -54,5 +54,9 @@ public ClientsDal() {
       List<Clients> list = session.selectList("clients.selectAll");
       session.close();
       return list;
+    }
+
+    Clients selectByPhone(int phone) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

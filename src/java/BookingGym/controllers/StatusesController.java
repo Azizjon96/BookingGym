@@ -30,4 +30,8 @@ public class StatusesController {
     {
         return statusesDal.update(statuses);
     }
+      public int deleteStatuses(Statuses statuses)
+    {
+        return statusesDal.delete(statuses);
+    }
 }

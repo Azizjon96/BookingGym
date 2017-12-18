@@ -33,4 +33,8 @@ public class ReservationController {
     {
         return reservationDal.update(reservation);
     }
+       public int deleteClients(Reservation reservation)
+    {
+        return reservationDal.delete(reservation);
+    }
 }

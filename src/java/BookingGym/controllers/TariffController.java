@@ -29,4 +29,8 @@ public class TariffController {
     {
         return tariffDal.update(tariff);
     }
+      public int deleteTariff(Tariff tariff)
+    {
+        return tariffDal.delete(tariff);
+    }
 }

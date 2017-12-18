@@ -40,10 +40,10 @@ public class TariffDal extends BaseDal{
     }
 
     
-    public int delete(String id)
+    public int delete(Tariff tariff)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
-      int count =  session.delete("tariff.delete",id);
+      int count =  session.delete("tariff.delete",tariff);
       session.commit();
       session.close();
       return count;
