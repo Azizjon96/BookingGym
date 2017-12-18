@@ -11,7 +11,7 @@ public class StatusesController {
         statusesDal= new StatusesDal();
     }
     
-    public List<Statuses> getAllStatusess()
+    public List<Statuses> getAllStatuses()
     {
         return statusesDal.selectAll();
     }

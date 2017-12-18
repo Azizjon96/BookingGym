@@ -1,23 +1,22 @@
 package BookingGym.api;
-/**
- *
- * @author Azizjon
- */
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BookingGym.mappers.JsonStatusesMapper;
-import BookingGym.controllers.StatusesController;
-import BookingGym.model.Statuses;
+import BookingGym.mappers.JsonClientsMapper;
+import BookingGym.controllers.ClientsController;
+import BookingGym.model.Clients;
 
-
-@WebServlet(name = "GetAllStatusess", urlPatterns = {"/GetAllStatusess"})
-public class GetAllStatusess extends HttpServlet {
+/**
+ *
+ * @author Azizjon
+ */
+@WebServlet(name = "DeleteClients", urlPatterns = {"/DeleteClients"})
+public class DeleteClients extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,12 +30,14 @@ public class GetAllStatusess extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+       String jsonObject = request.getParameter("json");
+        
         try (PrintWriter out = response.getWriter()) 
         {
-            StatusesController statusesController = new StatusesController();
-            List<Statuses> statuses =  statusesController.getAllStatusess();
-            String json=JsonStatusesMapper.toJson(statuses);
-            out.println(json);
+           Clients clients = JsonClientsMapper.fromJSON(jsonObject);
+           ClientsController  clientsController = new ClientsController();
+           int res=clientsController.deleteClients(clients);
+           out.print(res);
         }
     }
 
@@ -76,7 +77,7 @@ public class GetAllStatusess extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "description";
+        return "Short description";
     }// </editor-fold>
 
 }
