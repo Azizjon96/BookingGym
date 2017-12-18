@@ -38,6 +38,8 @@ public class TariffDal extends BaseDal{
       session.close();
       return count;
     }
+
+    
     public int delete(String id)
     {
       SqlSession session = sqlSessionFactory.openSession(); 

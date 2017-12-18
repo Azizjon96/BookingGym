@@ -55,8 +55,4 @@ public ClientsDal() {
       session.close();
       return list;
     }
-
-
-    
-
 }
