@@ -30,12 +30,12 @@ public class DeleteTariff extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        String jsonObject = request.getParameter("json");
-        
+        int id = Integer.parseInt(request.getParameter("t_id_tariff"));
         try (PrintWriter out = response.getWriter()) 
         {
            Tariff tariff = JsonTariffMapper.fromJson(jsonObject);
            TariffController  tariffController = new TariffController();
-           int res=tariffController.deleteTariff(tariff);
+           int res=tariffController.deleteTariff(id);
            out.print(res);
         }
     }

@@ -16,7 +16,7 @@
        SELECT * FROM reservation;  
     </select> 
  
-    <select id = "selectById" parameterType = "String" resultMap = "resultReservation"> 
+    <select id = "selectById" parameterType = "int" resultMap = "resultReservation"> 
        SELECT * FROM reservation WHERE r_id_reservation = #{r_id_reservation}; 
     </select> 
     
@@ -50,11 +50,11 @@
         WHERE r_id_reservation = #{r_id_reservation}; 
     </update>
     
-    <select id = "selectReservationClient" parameterType="String" resultMap="BookingGym.resultReservation">  // у одного клиента может быть несколько броней
+    <select id = "selectReservationClient" parameterType="int" resultMap="BookingGym.resultReservation">  // у одного клиента может быть несколько броней
         select * from reservation where r_id_client = #{r_id_client};
     </select>
 
-    <delete id = "delete" parameterType = "String">                             // id же варчар %(
+    <delete id = "delete" parameterType = "int">                             // id же варчар %(
        DELETE from reservation WHERE r_id_reservation = #{r_id_reservation}; 
     </delete>
 </mapper> 

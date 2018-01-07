@@ -15,7 +15,7 @@ public class ClientsController {
         return clientsDal.selectAll();
     }
     
-    public Clients getClientsById(String id)
+    public Clients getClientsById(int id)
     {
         return clientsDal.selectById(id);
     }
@@ -30,9 +30,9 @@ public class ClientsController {
         return clientsDal.update(clients);
     }
     
-      public int deleteClients(Clients clients)
+      public int deleteClients(int id)
     {
-        return clientsDal.delete(clients);
+        return clientsDal.delete(id);
     }
     
      

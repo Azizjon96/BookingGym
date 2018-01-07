@@ -33,7 +33,7 @@ public class GetTariffById extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             TariffController tariffController = new TariffController();
             
-            Tariff tariff =  tariffController.getTariffById("1");
+            Tariff tariff =  tariffController.getTariffById(1);
             String json=JsonTariffMapper.toJson(tariff);
             out.println(json);
         }

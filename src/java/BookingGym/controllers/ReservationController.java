@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ReservationController {
 
-    public static Reservation getClientsById(String string) {
+    public static Reservation getClientsById(int string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     protected ReservationDal reservationDal;
@@ -19,7 +19,7 @@ public class ReservationController {
         return reservationDal.selectAll();
     }
     
-    public Reservation getReservationById(String id)
+    public Reservation getReservationById(int id)
     {
         return reservationDal.selectById(id);
     }
@@ -33,7 +33,7 @@ public class ReservationController {
     {
         return reservationDal.update(reservation);
     }
-       public int deleteReservation(Reservation reservation)
+       public int deleteReservation(int reservation)
     {
         return reservationDal.delete(reservation);
     }

@@ -27,7 +27,7 @@ public ClientsDal() {
       return count;
     }
     
-    public int delete(Clients clients)
+    public int delete(int clients)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.delete("clients.delete",clients);
@@ -36,7 +36,7 @@ public ClientsDal() {
       return count;
     }
     
-    public Clients selectById(String id) {
+    public Clients selectById(int id) {
       SqlSession session = sqlSessionFactory.openSession(); 
       Clients clients= session.selectOne("clients.selectById",id);
       session.close();

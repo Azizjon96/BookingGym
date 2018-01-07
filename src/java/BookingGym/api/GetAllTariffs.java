@@ -26,17 +26,22 @@ public class GetAllTariffs extends HttpServlet {
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException if an I/O error occurs                                                               
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) 
         {
-            TariffController tariffController = new  TariffController();
+             System.out.println("1");
+            TariffController tariffController = new TariffController();
+             System.out.println("11");
             List<Tariff> tariff =  tariffController.getAllTariffs();
+            System.out.println("111");
             String json=JsonTariffMapper.toJson(tariff);
+            System.out.println("1111"+json);
             out.println(json);
+            
         }
     }
 

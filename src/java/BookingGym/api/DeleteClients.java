@@ -30,13 +30,13 @@ public class DeleteClients extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String jsonObject = request.getParameter("json");
-        
+       //String jsonObject = request.getParameter("json");
+        int id = Integer.parseInt(request.getParameter("c_id_client"));
         try (PrintWriter out = response.getWriter()) 
         {
-           Clients clients = JsonClientsMapper.fromJSON(jsonObject);
+           //Clients clients = JsonClientsMapper.fromJSON(jsonObject);
            ClientsController  clientsController = new ClientsController();
-           int res=clientsController.deleteClients(clients);
+           int res=clientsController.deleteClients(id);
            out.print(res);
         }
     }

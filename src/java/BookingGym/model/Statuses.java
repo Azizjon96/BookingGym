@@ -6,14 +6,14 @@ package BookingGym.model;
  * @author Azizjon
  */
 public class Statuses {
-    private long s_id_status;
+    private int s_id_status;
     private boolean s_processing;
     private boolean s_approved;
     private boolean s_failure;
    
     public Statuses(){}
 
-    public Statuses(long s_id_status, boolean s_processing, boolean s_approved, boolean s_failure) {
+    public Statuses(int s_id_status, boolean s_processing, boolean s_approved, boolean s_failure) {
         this.s_id_status = s_id_status;
         this.s_processing = s_processing;
         this.s_approved = s_approved;
@@ -24,7 +24,7 @@ public class Statuses {
         return s_id_status;
     }
 
-    public void setS_id_status(long s_id_status) {
+    public void setS_id_status(int s_id_status) {
         this.s_id_status = s_id_status;
     }
 

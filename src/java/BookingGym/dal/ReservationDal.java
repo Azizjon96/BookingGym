@@ -18,14 +18,14 @@ public class ReservationDal extends BaseDal {
       return list;
     }
 
-    public Reservation selectById(String id) {
+    public Reservation selectById(int id) {
       SqlSession session = sqlSessionFactory.openSession(); 
       Reservation reservation = session.selectOne("reservation.selectById",id);
       session.close();
       return reservation;
     }
     
-    public List<Reservation> selectReservationClient(String id) {
+    public List<Reservation> selectReservationClient(int id) {
       SqlSession session = sqlSessionFactory.openSession(); 
       List<Reservation> reservation = session.selectOne("reservation.selectReservationClient",id);
       session.close();
@@ -48,7 +48,7 @@ public class ReservationDal extends BaseDal {
       return count;
     }
     
-    public int delete(Reservation reservation)
+    public int delete(int reservation)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.delete("reservation.delete",reservation);

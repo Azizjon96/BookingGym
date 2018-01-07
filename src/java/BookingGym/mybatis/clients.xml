@@ -15,7 +15,7 @@
         SELECT * FROM clients;  
     </select> 
  
-    <select id = "selectById" parameterType = "String" resultMap = "resultClients"> 
+    <select id = "selectById" parameterType = "int" resultMap = "resultClients"> 
         SELECT * FROM clients WHERE c_id_client = #{c_id_client}; 
     </select> 
     

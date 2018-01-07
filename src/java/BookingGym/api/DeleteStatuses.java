@@ -30,12 +30,12 @@ public class DeleteStatuses extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        String jsonObject = request.getParameter("json");
-        
+        int id = Integer.parseInt(request.getParameter("t_id_status"));
         try (PrintWriter out = response.getWriter()) 
         {
            Statuses statuses = JsonStatusesMapper.fromJson(jsonObject);
            StatusesController  statusesController = new StatusesController();
-           int res=statusesController.deleteStatuses(statuses);
+           int res=statusesController.deleteStatuses(id);
            out.print(res);
         }
     }

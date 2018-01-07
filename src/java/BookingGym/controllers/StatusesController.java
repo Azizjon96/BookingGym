@@ -16,7 +16,7 @@ public class StatusesController {
         return statusesDal.selectAll();
     }
     
-    public Statuses getStatusesById(String id)
+    public Statuses getStatusesById(int id)
     {
         return statusesDal.selectById(id);
     }
@@ -30,7 +30,7 @@ public class StatusesController {
     {
         return statusesDal.update(statuses);
     }
-      public int deleteStatuses(Statuses statuses)
+      public int deleteStatuses(int statuses)
     {
         return statusesDal.delete(statuses);
     }

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Tariff {
     
-    private long t_id_tariff;
+    private int t_id_tariff;
     private String r_cost;
     private String t_number_visits;
     private String t_number_days;
@@ -12,7 +12,7 @@ public class Tariff {
     
     public Tariff(){}
 
-    public Tariff(long t_id_tariff, String r_cost, String t_number_visits, String t_number_days, String t_name) {
+    public Tariff(int t_id_tariff, String r_cost, String t_number_visits, String t_number_days, String t_name) {
         this.t_id_tariff = t_id_tariff;
         this.r_cost = r_cost;
         this.t_number_visits = t_number_visits;
@@ -24,7 +24,7 @@ public class Tariff {
         return t_id_tariff;
     }
 
-    public void setT_id_tariff(long t_id_tariff) {
+    public void setT_id_tariff(int t_id_tariff) {
         this.t_id_tariff = t_id_tariff;
     }
 

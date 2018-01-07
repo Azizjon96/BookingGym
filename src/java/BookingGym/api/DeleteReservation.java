@@ -31,12 +31,12 @@ public class DeleteReservation extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        String jsonObject = request.getParameter("json");
-        
+        int id = Integer.parseInt(request.getParameter("r_id_reservation"));
         try (PrintWriter out = response.getWriter()) 
         {
            Reservation reservation = JsonReservationMapper.fromJSON(jsonObject);
            ReservationController  reservationController = new ReservationController();
-           int res=reservationController.deleteReservation(reservation);
+           int res=reservationController.deleteReservation(id);
            out.print(res);
         }
     }

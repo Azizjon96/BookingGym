@@ -29,11 +29,11 @@ public class GetStatusesById extends HttpServlet {
     protected  void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-    //    int id =  Integer.parseInt(request.getParameter("id"));
+        int id =  Integer.parseInt(request.getParameter("s_id_status"));
         try (PrintWriter out = response.getWriter()) {
             StatusesController statusesController = new StatusesController();
             
-            Statuses statuses =  statusesController.getStatusesById("1");
+            Statuses statuses =  statusesController.getStatusesById(id);
             String json=JsonStatusesMapper.toJson(statuses);
             out.println(json);
         }

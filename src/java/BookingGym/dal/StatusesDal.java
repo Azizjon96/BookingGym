@@ -18,7 +18,7 @@ public class StatusesDal extends BaseDal
       return list;    
     }
 
-    public Statuses selectById(String id) {
+    public Statuses selectById(int id) {
       SqlSession session = sqlSessionFactory.openSession(); 
       Statuses statuses= session.selectOne("statuses.selectById",id);
       session.close();
@@ -41,7 +41,7 @@ public class StatusesDal extends BaseDal
       return count;
     }
     
-    public int delete(Statuses statuses)
+    public int delete(int statuses)
     {
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.delete("statuses.delete",statuses);
@@ -49,4 +49,5 @@ public class StatusesDal extends BaseDal
       session.close();
       return count;
     }   
+
 }

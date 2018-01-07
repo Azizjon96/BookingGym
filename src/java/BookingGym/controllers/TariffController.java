@@ -7,15 +7,16 @@ import java.util.List;
 public class TariffController {
      protected TariffDal tariffDal;
     public TariffController() {
-        tariffDal= new TariffDal();
+        tariffDal= new TariffDal(); 
     }
     
     public List<Tariff> getAllTariffs()
     {
+        
         return tariffDal.selectAll();
     }
     
-    public Tariff getTariffById(String id)
+    public Tariff getTariffById(int id)
     {
         return tariffDal.selectById(id);
     }
@@ -29,7 +30,7 @@ public class TariffController {
     {
         return tariffDal.update(tariff);
     }
-      public int deleteTariff(Tariff tariff)
+      public int deleteTariff(int tariff)
     {
         return tariffDal.delete(tariff);
     }

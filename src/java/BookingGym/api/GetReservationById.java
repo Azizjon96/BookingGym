@@ -30,11 +30,11 @@ public class GetReservationById extends HttpServlet {
     protected  void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-    //    int id =  Integer.parseInt(request.getParameter("id"));
+        int id =  Integer.parseInt(request.getParameter("r_id_reservation"));
         try (PrintWriter out = response.getWriter()) {
             ReservationController reservationController = new ReservationController();
             
-            Reservation reservation =  ReservationController.getClientsById("1");
+            Reservation reservation =  ReservationController.getClientsById(1);
             String json=JsonReservationMapper.toJson(reservation);
             out.println(json);
         }

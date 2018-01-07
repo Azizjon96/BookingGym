@@ -3,7 +3,7 @@
 
 <mapper namespace = "tariff">
      
-    <resultMap id = "resultTariff" type = "BookingGym.model.Tariff"> 
+    <resultMap id = "result" type = "BookingGym.model.Tariff"> 
        <result property = "t_id_tariff" column = "t_id_tariff"/> 
        <result property = "r_cost" column = "r_cost"/> 
        <result property = "t_number_visits" column = "t_number_visits"/> 
@@ -11,11 +11,11 @@
        <result property = "t_name" column = "t_name"/> 
     </resultMap> 
 
-    <select id = "selectAll" resultMap = "resultTariff"> 
+    <select id = "selectAll" resultMap = "result"> 
        SELECT * FROM tariff;  
     </select> 
  
-    <select id = "selectById" parameterType = "String" resultMap = "resultTariff"> 
+    <select id = "selectById" parameterType = "int" resultMap = "result"> 
        SELECT * FROM tariff WHERE t_id_tariff = #{t_id_tariff}; 
     </select> 
     
@@ -43,7 +43,7 @@
         WHERE t_id_tariff = #{t_id_tariff}; 
     </update>
 
-    <delete id = "delete" parameterType = "String"> 
+    <delete id = "delete" parameterType = "int"> 
        DELETE tariff WHERE t_id_tariff = #{t_id_tariff}; 
     </delete>
 </mapper> 
