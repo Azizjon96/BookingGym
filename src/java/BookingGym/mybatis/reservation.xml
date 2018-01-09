@@ -2,6 +2,7 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace = "reservation">
+    
     <resultMap id = "resultReservation" type = "BookingGym.model.Reservation"> 
        <result property = "r_id_reservation" column = "r_id_reservation"/> 
        <result property = "r_id_client" column = "r_id_client"/> 
@@ -50,7 +51,7 @@
         WHERE r_id_reservation = #{r_id_reservation}; 
     </update>
     
-    <select id = "selectReservationClient" parameterType="int" resultMap="BookingGym.resultReservation">  // у одного клиента может быть несколько броней
+    <select id = "selectReservationClient" parameterType="int" resultMap="resultReservation">  // у одного клиента может быть несколько броней
         select * from reservation where r_id_client = #{r_id_client};
     </select>
 
