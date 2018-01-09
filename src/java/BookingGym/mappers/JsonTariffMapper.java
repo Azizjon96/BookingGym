@@ -9,12 +9,15 @@ import java.util.logging.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
 public class JsonTariffMapper {
-     public static Tariff fromJson(String json)
+     public static String fromJson(Tariff tariff)
     {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            Tariff tariff =mapper.readValue(json,Tariff.class);
-            return tariff;
+            String json=mapper.writeValueAsString(tariff);
+            //Tariff tariff =mapper.readValue(json,Tariff.class);
+            
+            //return tariff;
+            return json;
         } catch (IOException ex) {
             Logger.getLogger( JsonTariffMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -47,5 +50,16 @@ public class JsonTariffMapper {
         }
         return null;
         
+    }
+
+    public static Tariff fromJson(String jsonObject) {
+               try {
+            ObjectMapper mapper = new ObjectMapper();
+            Tariff tariff = mapper.readValue(jsonObject, Tariff.class);
+            return tariff;
+        } catch (IOException ex) {
+            Logger.getLogger(JsonTariffMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }

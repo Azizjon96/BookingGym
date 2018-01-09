@@ -3,7 +3,7 @@
 
 <mapper namespace = "tariff">
      
-    <resultMap id = "result" type = "BookingGym.model.Tariff"> 
+    <resultMap id = "resultT" type = "BookingGym.model.Tariff"> 
        <result property = "t_id_tariff" column = "t_id_tariff"/> 
        <result property = "r_cost" column = "r_cost"/> 
        <result property = "t_number_visits" column = "t_number_visits"/> 
@@ -11,7 +11,7 @@
        <result property = "t_name" column = "t_name"/> 
     </resultMap> 
 
-    <select id = "selectAll" resultMap = "result"> 
+    <select id = "selectAll" resultMap = "resultT"> 
        SELECT * FROM tariff;  
     </select> 
  

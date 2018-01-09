@@ -1,0 +1,9 @@
+.thumbnail:hover
+{
+    border: 2px solid #222;
+    -moz-transform: scale(1.02); /* Для Firefox */
+    -webkit-transform: scale(1.02); /* Для Safari, Chrome, iOS */
+    -o-transform: scale(1.02); /* Для Opera */
+    transform: scale(1.02);    
+}
+

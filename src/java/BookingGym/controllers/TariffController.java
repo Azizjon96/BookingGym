@@ -30,8 +30,8 @@ public class TariffController {
     {
         return tariffDal.update(tariff);
     }
-      public int deleteTariff(int tariff)
+      public Tariff deleteTariff(int id)
     {
-        return tariffDal.delete(tariff);
+        return tariffDal.deleteById(id);
     }
 }

@@ -63,13 +63,13 @@ System.out.println("update");
          Tariff  tariff = null;
          TariffDal instance = new  TariffDal();
         int expResult = 0;
-        int result = instance.delete(tariff);
+        Tariff result = instance.deleteById(1);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    private String valueOf(int id) {
+    private int valueOf(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

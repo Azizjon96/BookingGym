@@ -46,7 +46,7 @@ public class ClientsDalTest {
          Clients  clients = null;
          ClientsDal instance = new  ClientsDal();
         int expResult = 0;
-        int result = instance.delete(clients);
+        int result = instance.delete(1);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -82,7 +82,7 @@ public class ClientsDalTest {
         assertTrue(list!=null && list.size()>0);
     }
 
-    private String valueOf(int id) {
+    private int valueOf(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

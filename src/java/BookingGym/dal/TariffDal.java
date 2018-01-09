@@ -11,11 +11,16 @@ public class TariffDal extends BaseDal{
 
     public List<Tariff> selectAll() {
         
-      SqlSession session = sqlSessionFactory.openSession(); 
-      List<Tariff> list = session.selectList("tariff.selectAll");
-      System.out.println("3");
-      session.close();
-     
+        List<Tariff> list = null;
+        try  {
+            SqlSession session = sqlSessionFactory.openSession();
+            list = session.selectList("tariff.selectAll");
+            System.out.println("3");
+        }
+       catch( Exception e){
+           System.err.println( "(2): " + e.getMessage() );
+       }
+      
       return list;
     }
 
@@ -42,13 +47,13 @@ public class TariffDal extends BaseDal{
     }
 
     
-    public int delete(int tariff)
+        public Tariff deleteById(int id)
     {
-      SqlSession session = sqlSessionFactory.openSession(); 
-      int count =  session.delete("tariff.delete",tariff);
-      session.commit();
-      session.close();
-      return count;
+        SqlSession session = sqlSessionFactory.openSession(); 
+        Tariff abonent =  session.selectOne("tariff.deleteById",id);
+        session.commit();
+        session.close(); 
+        return abonent;
     }
     
 }
