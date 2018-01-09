@@ -20,7 +20,7 @@ public class Tariff {
         this.t_name = t_name;
     }
 
-    public long getT_id_tariff() {
+    public int getT_id_tariff() {
         return t_id_tariff;
     }
 

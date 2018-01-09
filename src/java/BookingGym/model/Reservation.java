@@ -5,17 +5,17 @@ import java.util.Objects;
 
 public class Reservation {
     
-    private long r_id_reservation;
-    private long r_id_client;
+    private int r_id_reservation;
+    private int r_id_client;
     private String r_hall;
     private Date r_begin_visits;
     private Date r_end_visits;
-    private long r_id_tariff;
-    private long r_id_status;
+    private int r_id_tariff;
+    private int r_id_status;
     
     public Reservation(){}
 
-    public Reservation(long r_id_reservation, long r_id_client, String r_hall, Date r_begin_visits, Date r_end_visits, long r_id_tariff, long r_id_status) {
+    public Reservation(int r_id_reservation, int r_id_client, String r_hall, Date r_begin_visits, Date r_end_visits, int r_id_tariff, int r_id_status) {
         this.r_id_reservation = r_id_reservation;
         this.r_id_client = r_id_client;
         this.r_hall = r_hall;
@@ -25,19 +25,19 @@ public class Reservation {
         this.r_id_status = r_id_status;
     }
 
-    public long getR_id_reservation() {
+    public int getR_id_reservation() {
         return r_id_reservation;
     }
 
-    public void setR_id_reservation(long r_id_reservation) {
+    public void setR_id_reservation(int r_id_reservation) {
         this.r_id_reservation = r_id_reservation;
     }
 
-    public long getR_id_client() {
+    public int getR_id_client() {
         return r_id_client;
     }
 
-    public void setR_id_client(long r_id_client) {
+    public void setR_id_client(int r_id_client) {
         this.r_id_client = r_id_client;
     }
 
@@ -65,19 +65,19 @@ public class Reservation {
         this.r_end_visits = r_end_visits;
     }
 
-    public long getR_id_tariff() {
+    public int getR_id_tariff() {
         return r_id_tariff;
     }
 
-    public void setR_id_tariff(long r_id_tariff) {
+    public void setR_id_tariff(int r_id_tariff) {
         this.r_id_tariff = r_id_tariff;
     }
 
-    public long getR_id_status() {
+    public int getR_id_status() {
         return r_id_status;
     }
 
-    public void setR_id_status(long r_id_status) {
+    public void setR_id_status(int r_id_status) {
         this.r_id_status = r_id_status;
     }
 

@@ -3,7 +3,7 @@ package BookingGym.model;
 import java.util.Objects;
 
 public class Clients {
-    private long c_id_client;
+    private int c_id_client;
     private String c_surname;
     private String c_name;
     private String c_lastname;
@@ -11,7 +11,7 @@ public class Clients {
     
     public Clients(){}
 
-    public Clients(long c_id_client, String c_surname, String c_name, String c_lastname, String c_phone) {
+    public Clients(int c_id_client, String c_surname, String c_name, String c_lastname, String c_phone) {
         this.c_id_client = c_id_client;
         this.c_surname = c_surname;
         this.c_name = c_name;
@@ -19,11 +19,11 @@ public class Clients {
         this.c_phone = c_phone;
     }
 
-    public long getC_id_client() {
+    public int getC_id_client() {
         return c_id_client;
     }
 
-    public void setC_id_client(long c_id_client) {
+    public void setC_id_client(int c_id_client) {
         this.c_id_client = c_id_client;
     }
 

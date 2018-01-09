@@ -14,9 +14,6 @@ public class JsonTariffMapper {
         try {
             ObjectMapper mapper = new ObjectMapper();
             String json=mapper.writeValueAsString(tariff);
-            //Tariff tariff =mapper.readValue(json,Tariff.class);
-            
-            //return tariff;
             return json;
         } catch (IOException ex) {
             Logger.getLogger( JsonTariffMapper.class.getName()).log(Level.SEVERE, null, ex);

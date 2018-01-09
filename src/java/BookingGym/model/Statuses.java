@@ -20,7 +20,7 @@ public class Statuses {
         this.s_failure = s_failure;
     }
 
-    public long getS_id_status() {
+    public int getS_id_status() {
         return s_id_status;
     }
 

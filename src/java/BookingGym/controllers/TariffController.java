@@ -12,7 +12,6 @@ public class TariffController {
     
     public List<Tariff> getAllTariffs()
     {
-        
         return tariffDal.selectAll();
     }
     

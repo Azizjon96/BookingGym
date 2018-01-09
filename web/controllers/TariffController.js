@@ -4,7 +4,6 @@ class TariffController{
         return tariffService.getAllTariffs();
         
     }
-    
     getAllTariffViewButtons()     {
         var tariffs =this.getAllTariffs();
         var tariffsView = document.getElementById("tariffs");
@@ -21,7 +20,7 @@ class TariffController{
     }
     
     getAllTariffViewList()     {
-         var tariffs =this.getAllTariffs();
+        var tariffs =this.getAllTariffs();
         var tariffsView=document.getElementById("tariffs");
         var result="";
         for(var i=0; i<tariffs.length;i++)
