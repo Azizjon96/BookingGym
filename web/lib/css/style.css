@@ -1,9 +1,22 @@
 .thumbnail:hover
 {
     border: 2px solid #222;
-    -moz-transform: scale(1.02); /* Äëÿ Firefox */
-    -webkit-transform: scale(1.02); /* Äëÿ Safari, Chrome, iOS */
-    -o-transform: scale(1.02); /* Äëÿ Opera */
+    -moz-transform: scale(1.02); /* ï¿½ï¿½ï¿½ Firefox */
+    -webkit-transform: scale(1.02); /* ï¿½ï¿½ï¿½ Safari, Chrome, iOS */
+    -o-transform: scale(1.02); /* ï¿½ï¿½ï¿½ Opera */
     transform: scale(1.02);    
 }
-
+.header{
+    background: #47a447;
+    height: 200px;
+}
+.left {	width: 200px;
+    float: left;
+    height: 700px;
+    background: #eee} 
+.content{
+    width: 900px; 
+    float: right; 
+    background: #ddd; 
+    height: 700px;
+}
