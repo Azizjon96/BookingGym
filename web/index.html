@@ -12,72 +12,53 @@
     <script src="controllers/TariffController.js"></script>
     <script src="service/NewsService.js"></script>
     <script src="controllers/NewsController.js"></script>
-    <script>
-        function tariffClick(id)
-        {
-            var  controller = new TarifController();
-            controller.getNewsByIdCategoryViewList(id);
-        }
-        
-         function newsClick(id)
-        {
-              document.location.href = "/NEWPIN2/view/news.html?id="+id;
-        }
-    </script>
+
+    <style type="text/css">
+    * { padding:0px; margin:0px; outline:none; }
+    html,body { width:100%; height:100%; color:#000; font:11px arial; text-align:left; }
+    .clr { position:relative; display:block; height:0%; clear:both; }
+    .writter { width:100%; height:100%; min-width:1000px; }
+    .header { background:url('') no-repeat #894634; width:100%; height:100px; }
+    .content { width:100%; clear:both; }
+    .block-l { background:url('') no-repeat #002137; float:left; width:20%; min-height:700px; text-align:left; }
+    .block-r { background:url('') no-repeat #f0ffff; float:right; width:80%; min-height:700px; 
+       text-align:left; padding: 3%; color: #051f35;font-size: 140%;}
+    .footer { background:url('') no-repeat #343434; height:80px; line-height:120px; font-size:14px; }
+    </style> 
+  </head>
   
  
   <body>
- 
-      <div id="main" class="container">
-        <div class="row">
-             <div id="tariffs" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-             <div id="news" class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
-        </div>
-      </div>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                  </button>
+              <a class="navbar-brand" href="#">BookingGym</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-right" role="search" id="logBut">
+                     <br>
+                       <input style="width: 100px; height: 30px;" type="text" class="form-control" id="inputlogin"/>
+                     </br>
+                       <input style="width: 100px; height: 30px;" type="password" class="form-control" id="inputpass"/>
+                       <input onclick="loginClick()" type="submit" class="btn btn-default" value="Войти" style="background-color: #ddd;"/>
+                </div>
+            </div>
+          </div>
     <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
-    <script>
-    $(window).load(function () 
-    {
-        // alert( "JR"); 
-       var  controller = new TariffController();
-       
-        var tariffsView = document.getElementById("tariffs");
-       tariffsView.innerHTML = "result1";
-       controller.getAllTariffViewButtons();
-       //controller.getNewsByIdCategoryViewList(1);
-
-    });    
-    </script>    
-
-<title>tech demo</title>
-<style type="text/css">
-* { padding:0px; margin:0px; outline:none; }
-html,body { width:100%; height:100%; color:#000; font:11px arial; text-align:left; }
-.clr { position:relative; display:block; height:0%; clear:both; }
-.writter { width:100%; height:100%; min-width:1000px; }
-.header { background:url('') no-repeat #894634; width:100%; height:100px; }
-.content { width:100%; clear:both; }
-.block-l { background:url('') no-repeat #456456; float:left; width:20%; min-height:700px; text-align:left; }
-.block-r { background:url('') no-repeat #654456; float:right; width:80%; min-height:700px; text-align:left; }
-.footer { background:url('') no-repeat #343434; height:80px; line-height:120px; font-size:14px; }
-</style> 
+    
 
 
 <div class="writter" align="center">
-<div class="header">
-Тренажерный зал
-<div class="row">
-    <button class="btn pull-right" type="button">Log In</button>
-    </div>
-</div>
 <div class="clr"></div>
 <div class="content">
 <div class="block-l">
 
                                     <ul class="nav">
                                         <li>
-                                            <a href="/BookingGym/index.html">Тарифы</a>
+                                            <a href="/BookingGym/view/tariffs.html">Тарифы</a>
                                         </li>
                                         <li>
                                             <a href="/BookingGym/view/info.html">О Нас</a>
@@ -88,9 +69,12 @@ html,body { width:100%; height:100%; color:#000; font:11px arial; text-align:lef
                                     </ul>
                                 
 </div>
-<div class="block-r">
-RIGHT
-</div>
+<div id = "tariffs" class="block-r">
+    <div style="margin: -4%; position:relative;" >
+        <img src="pic/ukfukr.jpg" align="bottom" style = "width:100%; bottom:-700px; position: absolute;
+" alt="картинка на подгрузилась...">
+    </div>
+    </div>
 </div>
 <div class="clr"></div>
 <div class="footer">
@@ -98,6 +82,17 @@ RIGHT
 </div>
 </div>
 
+    
+       
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script>
+    $(window).load(function () 
+    {
+
+        //controller.getAllTariffViewList();
+    });    
+    </script> 
 </body>
 </html>
                       

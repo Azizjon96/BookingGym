@@ -10,8 +10,6 @@
     <link href="../lib/css/style.css" rel="stylesheet">
     <script src="../service/TariffService.js"></script>
     <script src="../controllers/TariffController.js"></script>
-    <script src="../service/NewsService.js"></script>
-    <script src="../controllers/NewsController.js"></script>
 
     <style type="text/css">
     * { padding:0px; margin:0px; outline:none; }
@@ -23,7 +21,8 @@
     .block-l { background:url('') no-repeat #002137; float:left; width:20%; min-height:700px; text-align:left; }
     .block-r { background:url('') no-repeat #f0ffff; float:right; width:80%; min-height:700px; 
        text-align:left; padding: 3%; color: #051f35;font-size: 140%;}
-    .footer { background:url('') no-repeat #343434; height:80px; line-height:120px; font-size:14px; }
+    .footer { background:url('') no-repeat #343434; height:80px; line-height:120px; font-size:14px;
+}
     </style> 
   </head>
   
@@ -36,9 +35,10 @@
                   </button>
               <a class="navbar-brand" href="#">BookingGym</a>
             </div>
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="navbar-form navbar-right" role="search" id="logBut">
-                     <br>
+                   <br>
                        <input style="width: 100px; height: 30px;" type="text" class="form-control" id="inputlogin"/>
                      </br>
                        <input style="width: 100px; height: 30px;" type="password" class="form-control" id="inputpass"/>
@@ -46,6 +46,12 @@
                 </div>
             </div>
           </div>
+      <div id="main" class="container">
+        <div class="row">
+             <div id="tari" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+             <div id="news" class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
+        </div>
+      </div>
     <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
     
@@ -53,6 +59,7 @@
 
 <div class="writter" align="center">
 <div class="clr"></div>
+
 <div class="content">
 <div class="block-l">
 
@@ -69,32 +76,24 @@
                                     </ul>
                                 
 </div>
-    <div id = "tariffs" class="block-r">
-        <h4>Дорогие друзья!</h4>
-<p>Мы рады приветствовать Вас в самом крупном в нашем городе фитнес-центре, площадью свыше 3000 кв.м., 
-расположенном в самом «сердце» Омска.
-«Гранд Фитнесс Холл» – это уникальный по своим габаритам тренажерный зал, общей площадью свыше 500 кв. м.,
-с панорамным видом на центральную часть города, оснащенный самыми современными силовыми тренажерами ведущих 
-мировых производителей GYM80 (Германия), LifeFitness(США),  Hammer(США) и MATRIX(США). Ультрасовременная
-линия кардиотренажеров LifeFitness(США) и MATRIX(США). 
-<p>Просторные, прекрасно оснащенные залы для групповых программ по аэробике, танцевальным направлениям и йоге.
-Единственные в нашем городе — Сайкл-студия и Академия сквоша.
-В фитнес-центре «Гранд Фитнесс Холл» действуют крупнейшая в городе Школа боевых искусств, расположенная в двух просторных залах,
-площадью свыше 900 кв.м., с рингом и татами, современная Студия функционального тренинга, 
-Школа классического балета В. Матран, Cтудия фехтования Е.Крикорьянц,
-Yoga-Холл и др. И все это предоставлено как для самых маленьких детей, так и для взрослых!
-К услугам клиентов и гостей нашего центра предоставлены массажные кабинеты, фитнес-бар, 
-удобные просторные раздевалки, комплекс вертикальных соляриев, душевые кабины и финская сауна.
-    </div>
+<div id = "tariffs" class="block-r"></div>
 </div>
-<div class="clr"></div>
 <div class="footer">
 Авторы
 </div>
-</div>  
+</div>
+        
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="..lib/js/bootstrap.min.js"></script>
+        <script>
+        $(window).load(function () 
+        {
+                var tariffsView=document.getElementById("tariffs");
+                var result="";
+                tariffsView.innerHTML = "result5";
+                var  controller = new TariffController();
+                controller.getAllTariffViewList();
+        });    
+        </script>     
 </body>
 </html>
-                      
-
-   
-
