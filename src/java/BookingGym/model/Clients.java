@@ -13,8 +13,8 @@ public class Clients {
 
     public Clients(int c_id_client, String c_surname, String c_name, String c_lastname, String c_phone) {
         this.c_id_client = c_id_client;
-        this.c_surname = c_surname;
         this.c_name = c_name;
+        this.c_surname = c_surname;       
         this.c_lastname = c_lastname;
         this.c_phone = c_phone;
     }

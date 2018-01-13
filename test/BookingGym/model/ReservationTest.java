@@ -13,10 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Azizjon
- */
+
 public class ReservationTest {
     
     public ReservationTest() {
@@ -41,13 +38,14 @@ public class ReservationTest {
     @Test
     public void testCreateReservation() {
        System.out.println("test create Reservation");
-       Reservation reservation = new Reservation(1, 1, "hall2", new Date(2017,9,25), new Date(2017,11,25),1,1);
+       Date date = new Date(2017,9,25);
+       Reservation reservation = new Reservation(1, 1, "hall2", date, date,1,1);
         
        assertEquals(reservation.getR_id_reservation(), 1);
        assertEquals(reservation.getR_id_client(), 1);
        assertEquals(reservation.getR_hall(), "hall2");
-       assertEquals(reservation.getR_begin_visits(), "fullDescription");
-       assertEquals(reservation.getR_end_visits(), new Date(2017,9,25));
+       assertEquals(reservation.getR_begin_visits(), date);
+       assertEquals(reservation.getR_end_visits(), date);
        assertEquals(reservation.getR_id_tariff(), 1);
        assertEquals(reservation.getR_id_status(), 1);
     }
@@ -57,8 +55,8 @@ public class ReservationTest {
         System.out.println("test equals Reservation");
        
          Reservation reservation1 = new Reservation(1, 1, "hall2", new Date(2017,9,25), new Date(2017,11,25),1,1);
-         Reservation reservation2 = new Reservation(1, 1, "hall2", new Date(2017,9,25), new Date(2017,11,20),1,1);
-         Reservation reservation3 = new Reservation(2, 2, "hall3", new Date(2017,9,25), new Date(2017,11,25),2,2);
+         Reservation reservation2 = new Reservation(1, 1, "hall2", new Date(2017,9,25), new Date(2017,11,25),1,1);
+         Reservation reservation3 = new Reservation(2, 2, "hall3", new Date(2017,9,25), new Date(2017,11,20),2,0);
     
          assertTrue(reservation1.equals(reservation2));
          assertFalse(reservation1.equals(reservation3));

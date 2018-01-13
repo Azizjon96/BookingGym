@@ -49,7 +49,14 @@ public class JsonClientsMapper {
     }
 
     public static Clients fromJSON(String jsonObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                       try {
+            ObjectMapper mapper = new ObjectMapper();
+            Clients cl = mapper.readValue(jsonObject, Clients.class);
+            return cl;
+        } catch (IOException ex) {
+            Logger.getLogger(JsonTariffMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
 }

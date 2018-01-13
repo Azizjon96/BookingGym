@@ -23,19 +23,28 @@
         SELECT * FROM clients WHERE c_phone = #{c_phone}; 
     </select> 
     
-    <insert id = "insert" parameterType = "BookingGym.model.Tariff"> 
-       INSERT INTO tariff 
+    <insert id = "insert" parameterType = "BookingGym.model.Clients"> 
+       INSERT INTO clients 
             (c_id_client, 
              c_surname,
              c_name,
              c_lastname,
-             c_phone;
+             c_phone)
        VALUES 
             (#{c_id_client}, 
              #{c_surname}, 
              #{c_name}, 
              #{c_lastname}, 
-             #{c_phone};    
+             #{c_phone});
+    </insert>
+    <insert id = "insertReservation" parameterType = "BookingGym.model.Clients"> 
+       INSERT INTO statuses
+            (s_id_status, 
+             s_processing, 
+             s_approved, 
+             s_failure)
+       VALUES 
+            (#{c_id_client},  1,   0,   0);
     </insert>
     
     <update id = "update" parameterType = "BookingGym.model.Clients"> 

@@ -51,7 +51,7 @@ public class StatusesTest {
         System.out.println("test equals Statuses");
        
          Statuses statuses1 = new Statuses(1, true, false, true);
-         Statuses statuses2 = new Statuses(2, true, false, true);
+         Statuses statuses2 = new Statuses(1, true, false, true);
          Statuses statuses3 = new Statuses(3, false, false, true);
     
          assertTrue(statuses1.equals(statuses2));

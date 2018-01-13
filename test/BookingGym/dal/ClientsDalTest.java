@@ -42,7 +42,7 @@ public class ClientsDalTest {
     @Test
     public void testDelete() {
    
-     System.out.println("delete");
+            System.out.println("delete");
          Clients  clients = null;
          ClientsDal instance = new  ClientsDal();
         int expResult = 0;

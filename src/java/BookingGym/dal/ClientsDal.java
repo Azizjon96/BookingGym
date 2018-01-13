@@ -20,8 +20,11 @@ public ClientsDal() {
     }
 
     public int insert(Clients clients) {
+      //System.out.print("OUTTTTTT +  "+clients);
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.insert("clients.insert",clients);
+      session.commit();
+      int count2 =  session.insert("clients.insertReservation",clients);
       session.commit();
       session.close();
       return count;

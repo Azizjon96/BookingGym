@@ -34,14 +34,7 @@ class TariffController{
             </div>"
         }
         tariffsView.innerHTML = result;
-    }
-    
-//    getTariffByIdCategory(id)     {
-//        var categoryService = new CategoryService();
-//        return categoryService.getNewsByIdCategory(id);
-//    }
-     
-        
+    }   
 }
 
 
