@@ -58,7 +58,6 @@
 
      <delete id = "delete" parameterType = "String"> 
        DELETE from clients WHERE c_id_client = #{c_id_client}; 
-     </delete>
-     
+     </delete>     
 </mapper> 
 

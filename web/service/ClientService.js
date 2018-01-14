@@ -10,8 +10,8 @@ class ClientService{
                       alert( request.status + ': ' + request.statusText ); 
                  } 
                  else    {
-                     var count= request.responseText;
-                     return count;
+                     var client = JSON.parse(request.responseText);
+                     return client;
                  }
                  return null;
             }  

@@ -1,8 +1,4 @@
 package BookingGym.api;
-/**
- *
- * @author Azizjon
- */
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -11,13 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BookingGym.mappers.JsonTariffMapper;
-import BookingGym.controllers.TariffController;
-import BookingGym.model.Tariff;
+import BookingGym.mappers.JsonAdminMapper;
+import BookingGym.controllers.AdminController;
+import BookingGym.model.Admin;
 
 
-@WebServlet(name = "GetAllTariffs", urlPatterns = {"/GetAllTariffs"})
-public class GetAllTariffs extends HttpServlet {
+@WebServlet(name = "GetAllAdmin", urlPatterns = {"/GetAllAdmin"})
+public class GetAllAdmin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,12 +32,12 @@ public class GetAllTariffs extends HttpServlet {
         {
              System.out.println("1");
                      try  {
-                TariffController tariffController = new TariffController();
+                AdminController adminController = new AdminController();
                 System.out.println("11");
-                List<Tariff> tariff =  tariffController.getAllTariffs();
+                List<Admin> admin =  adminController.getAllAdmin();
                 System.out.println("111");
-                String json=JsonTariffMapper.toJson(tariff);
-                System.out.println("json"+json);
+                String json=JsonAdminMapper.toJson(admin);
+                System.out.println("jsonAdmin"+json);
                 out.println(json);
                     }
                     catch( Exception e){

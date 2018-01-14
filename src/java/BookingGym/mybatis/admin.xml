@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "admin">
+     
+    <resultMap id = "result" type = "BookingGym.model.Admin"> 
+       <result property = "a_id" column = "a_id"/> 
+       <result property = "a_login" column = "a_login"/> 
+       <result property = "a_pass" column = "a_pass"/> 
+    </resultMap> 
+
+    <select id = "selectAll" resultMap = "result"> 
+       SELECT * FROM admin;  
+    </select> 
+</mapper> 
+
+

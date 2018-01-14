@@ -1,5 +1,6 @@
 class TariffController{
-    getAllTariffs()        {
+    getAllTariffs()        
+    {
         var tariffService = new TariffService();
         return tariffService.getAllTariffs();
         
@@ -13,8 +14,7 @@ class TariffController{
            result+= "<div class='row'>\n\
            <div onclick='tariffClick("+ tariffs[i].t_id_tariff +")' class='btn btn-default col-md-12'  >"+tariffs[i].t_name+
            "</div></div>"
-       }
-        
+        }        
         tariffsView.innerHTML = result;
        // tariffsView.innerHTML = "result5";
     }
@@ -22,8 +22,7 @@ class TariffController{
     getAllTariffViewList()     {
         var tariffs =this.getAllTariffs();
         var tariffsView=document.getElementById("tariffs");
-        var result="";
-        tariffsView.innerHTML = "result5";
+        var result="<h1>Список тарифов</h1>";
         for(var i=0; i<tariffs.length;i++)
         {
             result+= "<div  style='border: 2px solid red; margin-top: 3%; padding: 2%; '>\n\
