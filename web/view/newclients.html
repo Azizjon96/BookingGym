@@ -12,6 +12,10 @@
     <script src="../controllers/TariffController.js"></script>    
     <script src="../service/AdminService.js"></script>
     <script src="../controllers/AdminController.js"></script>
+    <script src="../service/ClientService.js"></script>
+    <script src="../controllers/ClientController.js"></script>
+    <script src="../service/StatusesService.js"></script>
+    <script src="../controllers/StatusesController.js"></script>
     
 
     <script>
@@ -34,6 +38,19 @@
             {
                document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
                 location.reload();                
+            }
+            function yesClick(id){
+                var conroller = new StatusesController(id); 
+                var count = conroller.approved();
+                alert("Успех");
+                location.reload();
+            }
+                
+            function noClick(id){
+                var conroller = new StatusesController(id); 
+                var count = conroller.failure();
+                alert("Отказано");
+                location.reload();
             }
         </script>
     
@@ -96,10 +113,9 @@
                                     </ul>
                                 
 </div>
-<div id = "tariffs" class="block-r">Нет связи с БД</div>
+<div id = "client" class="block-r">Нет связи с БД</div>
 </div>
 <div class="footer">
-Авторы
 </div>
 </div>
         
@@ -108,12 +124,12 @@
         <script>
         window.onload = function () 
         {
-                var tariffsView=document.getElementById("tariffs");
+                var clientView =document.getElementById("client");
                 var result="";
-                tariffsView.innerHTML = "Нет связи с бд";
-                var  controller = new TariffController();
-                controller.getAllTariffViewList();
-                
+                clientView.innerHTML = "Нет связи с бд";
+                var  controller = new ClientController();
+                controller.getNewClientViewList();
+                //alert("getAllClientViewList+");
 
                 document.form.inputlogin.value = "";
                 document.form.inputpass.value= "";

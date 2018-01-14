@@ -1,28 +1,41 @@
 class StatusesController
 {
-    insertNewClient()
+   constructor(id) {
+    this.id = id;
+    }
+
+    approved()
+    {
+
+        var statusesService = new StatusesService();
+       // var doctor=sel.options[sel.selectedIndex].text; 
+       var object = {};
+        object.s_id_status = this.id;
+        object.s_processing = 0;
+        object.s_approved = 1;
+        object.s_failure = 0;
+        var json=JSON.stringify(object);
+        var count= statusesService.updateStateses(json);
+        //alert("json_______________OUT");
+        return count;
+    }  
+    failure()
     {
         //alert("insertClienttDB+");
-        var clientService = new ClientService();
-        var c_name=document.getElementById("name").value;
-        var c_surname=document.getElementById("surname").value;
-        var c_lastname=document.getElementById("lastname").value;
-        var c_numberphone=document.getElementById("numberphone").value;
-        
+        var statesesService = new StatusesService();
        // var doctor=sel.options[sel.selectedIndex].text;  
-
         var object = {};
-        object.c_id_client = null;
-        object.c_name = c_name;
-        object.c_surname = c_surname;
-        object.c_lastname = c_lastname;
-        object.c_phone = c_numberphone;
-        
+        object.s_id_status = this.id;
+        object.s_processing = 0;
+        object.s_approved = 0;
+        object.s_failure = 1;
         var json=JSON.stringify(object);
-        var count= clientService.insertClients(json);
+        var count= statesesService.updateStateses(json);
         //alert("json_______________OUT");
         return count;
     }   
 }
+
+
 
 

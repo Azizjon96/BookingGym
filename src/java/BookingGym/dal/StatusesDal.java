@@ -28,6 +28,7 @@ public class StatusesDal extends BaseDal
     public int insert(Statuses statuses) {
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.insert("statuses.insert",statuses);
+      
       session.commit();
       session.close();
       return count;
@@ -36,6 +37,7 @@ public class StatusesDal extends BaseDal
     public int update(Statuses statuses) {
       SqlSession session = sqlSessionFactory.openSession(); 
       int count =  session.update("statuses.update",statuses);
+                 //System.out.println(statuses);
       session.commit();
       session.close();
       return count;

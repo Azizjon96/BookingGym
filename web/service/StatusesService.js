@@ -1,10 +1,10 @@
-class ClientService{
+class StatusesService{
 
-        insertClients(json)
+        updateStateses(json)
             {
-                //alert("insertClient+");
+                 alert("updateStateses...");
                  var request = new XMLHttpRequest();
-                 request.open('GET', '/BookingGym/InsertClients?json=' + json, false);
+                 request.open('GET', '/BookingGym/UpdateStatuses?json=' + json, false);
                  request.send();
                  if (request.status != 200)  {
                       alert( request.status + ': ' + request.statusText ); 
@@ -15,24 +15,8 @@ class ClientService{
                  }
                  return null;
             }  
-        getAllClient()
         
-        {
-                    var request = new XMLHttpRequest();
-                     request.open('GET', '/BookingGym/GetAllClients', false);
-                    request.send();
-                    if (request.status != 200) 
-                        {
-                        alert( request.status + ': ' + request.statusText ); 
-                        return null;
-                         } 
-                      else 
-                        {
-                            var client = JSON.parse(request.responseText);
-                            return client;
-                        }
-                        }
-        getNewClient()
+        getStateses()
         
         {
                     var request = new XMLHttpRequest();

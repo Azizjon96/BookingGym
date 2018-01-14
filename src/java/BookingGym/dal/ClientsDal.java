@@ -58,6 +58,12 @@ public ClientsDal() {
       session.close();
       return list;
     }
+    public List<Clients> selectNew() {
+      SqlSession session = sqlSessionFactory.openSession(); 
+      List<Clients> list = session.selectList("clients.selectNew");
+      session.close();
+      return list;
+    }
 
     Clients selectByPhone(int phone) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

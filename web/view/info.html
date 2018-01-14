@@ -106,6 +106,9 @@
 Yoga-Холл и др. И все это предоставлено как для самых маленьких детей, так и для взрослых!
 К услугам клиентов и гостей нашего центра предоставлены массажные кабинеты, фитнес-бар, 
 удобные просторные раздевалки, комплекс вертикальных соляриев, душевые кабины и финская сауна.
+ <div>
+     <div>
+                 <img src="../pic/Knuckles.png" align="bottom" style = "width:100%; bottom:-700px; position: absolute;" alt="картинка на загрузилась...">
     </div>
 </div>
 <div class="clr"></div>
@@ -135,8 +138,11 @@ Yoga-Холл и др. И все это предоставлено как для
                 
                             var e = document.getElementById("ulmua");
                             var newLi = document.createElement('li');
-                            newLi.innerHTML = "<a href='/BookingGym/view/clients.html'>Клиенты</a>";
+                            newLi.innerHTML = "<a href='/BookingGym/view/allclients.html'>Все клиенты</a>";
                             e.appendChild(newLi);
+                            var newLi1 = document.createElement('li');
+                            newLi1.innerHTML = "<a href='/BookingGym/view/newclients.html'>Новые клиенты</a>";
+                            e.appendChild(newLi1);
                     }
                  }
                   document.getElementById("form").style.visibility = 'visible';

@@ -34,6 +34,10 @@ public class ClientsController {
     {
         return clientsDal.delete(id);
     }
+
+    public List<Clients> getNewClients() {
+       return clientsDal.selectNew();
+    }
     
      
      

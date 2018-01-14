@@ -14,6 +14,17 @@
     <select id = "selectAll" resultMap = "resultClients"> 
         SELECT * FROM clients;  
     </select> 
+    
+    <select id = "selectNew" resultMap = "resultClients"> 
+        SELECT * 
+        FROM clients
+        WHERE c_id_client
+        IN (
+        SELECT s_id_status
+        FROM  `statuses` 
+        WHERE s_processing =1
+        )  
+    </select> 
  
     <select id = "selectById" parameterType = "int" resultMap = "resultClients"> 
         SELECT * FROM clients WHERE c_id_client = #{c_id_client}; 

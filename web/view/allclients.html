@@ -12,7 +12,7 @@
     <script src="../controllers/TariffController.js"></script>    
     <script src="../service/AdminService.js"></script>
     <script src="../controllers/AdminController.js"></script>
-        <script src="../service/ClientService.js"></script>
+    <script src="../service/ClientService.js"></script>
     <script src="../controllers/ClientController.js"></script>
     
 
@@ -101,7 +101,6 @@
 <div id = "client" class="block-r">Нет связи с БД</div>
 </div>
 <div class="footer">
-Авторы
 </div>
 </div>
         
@@ -113,9 +112,10 @@
                 var clientView =document.getElementById("client");
                 var result="";
                 clientView.innerHTML = "Нет связи с бд";
+                
                 var  controller = new ClientController();
                 controller.getAllClientViewList();
-                alert("getAllClientViewList+");
+                //alert("getAllClientViewList+");
 
                 document.form.inputlogin.value = "";
                 document.form.inputpass.value= "";
@@ -137,8 +137,11 @@
                 
                             var e = document.getElementById("ulmua");
                             var newLi = document.createElement('li');
-                            newLi.innerHTML = "<a href='/BookingGym/view/clients.html'>Клиенты</a>";
+                            newLi.innerHTML = "<a href='/BookingGym/view/allclients.html'>Все клиенты</a>";
                             e.appendChild(newLi);
+                            var newLi1 = document.createElement('li');
+                            newLi1.innerHTML = "<a href='/BookingGym/view/newclients.html'>Новые клиенты</a>";
+                            e.appendChild(newLi1);
                     }
                  }
                   document.getElementById("form").style.visibility = 'visible';
