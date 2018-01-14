@@ -30,14 +30,14 @@ public class GetAllAdmin extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) 
         {
-             System.out.println("1");
+             //System.out.println("1");
                      try  {
                 AdminController adminController = new AdminController();
-                System.out.println("11");
+                //System.out.println("11");
                 List<Admin> admin =  adminController.getAllAdmin();
-                System.out.println("111");
+                //System.out.println("111");
                 String json=JsonAdminMapper.toJson(admin);
-                System.out.println("jsonAdmin"+json);
+                //System.out.println("jsonAdmin"+json);
                 out.println(json);
                     }
                     catch( Exception e){

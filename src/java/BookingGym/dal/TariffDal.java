@@ -15,7 +15,7 @@ public class TariffDal extends BaseDal{
         try  {
             SqlSession session = sqlSessionFactory.openSession();
             list = session.selectList("tariff.selectAll");
-            System.out.println("3");
+            //System.out.println("3");
         }
        catch( Exception e){
            System.err.println( "(2): " + e.getMessage() );

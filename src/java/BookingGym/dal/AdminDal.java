@@ -15,8 +15,8 @@ public class AdminDal extends BaseDal{
         try  {
             SqlSession session = sqlSessionFactory.openSession();
             list = session.selectList("admin.selectAll");
-            System.out.println(list);
-            System.out.println("3");
+            //System.out.println(list);
+            //System.out.println("3");
         }
        catch( Exception e){
            System.err.println( "(2): " + e.getMessage() );

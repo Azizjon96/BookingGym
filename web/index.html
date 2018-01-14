@@ -75,9 +75,9 @@
 <div class="writter" align="center">
 <div class="clr"></div>
 <div class="content">
-<div class="block-l">
+<div class="block-l" id = "leftdiv">
 
-                                    <ul class="nav">
+                                    <ul class="nav" id = "ulmua">
                                         <li>
                                             <a href="/BookingGym/view/tariffs.html">Тарифы</a>
                                         </li>
@@ -87,7 +87,7 @@
                                         <li>
                                             <a href="/BookingGym/view/info.html">О Нас</a>
                                         </li>
-                                    </ul>
+                                        </ul>
                                 
 </div>
 <div id = "tariffs" class="block-r">
@@ -115,6 +115,7 @@
                 document.form.inputpass.value= "";
                 var login = getCookie("login");
                 var pass = getCookie("password");
+                
                 if (login != undefined){
                     document.form.inputlogin.value = login;
                     document.form.inputpass.value = pass;
@@ -124,6 +125,15 @@
                     {
                             var outView=document.getElementById("logBut");
                             outView.innerHTML = "<input onclick='logoutClick()' type='submit' class='btn btn-default' value='Выйти' style='background-color: #eee;'/>";
+                            //var DivHtml = document.getElementByid('leftdiv').innerHTML;
+                            
+                            var e = document.getElementById("ulmua");
+                            var newLi = document.createElement('li');
+                            newLi.innerHTML = "<a href='/BookingGym/view/clients.html'>Клиенты</a>";
+                            e.appendChild(newLi);
+
+
+
                     }
                  }
             document.getElementById("form").style.visibility = 'visible';

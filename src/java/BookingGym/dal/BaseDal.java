@@ -18,7 +18,7 @@ public class BaseDal {
             
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             
-            System.out.println("create sqlSessionFactory  +");
+            //System.out.println("create sqlSessionFactory  +");
             
             
         } 

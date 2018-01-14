@@ -119,7 +119,7 @@
 <div class="content">
 <div class="block-l">
 
-                                    <ul class="nav">
+                                    <ul class="nav" id = "ulmua">
                                         <li>
                                             <a href="/BookingGym/view/tariffs.html">Тарифы</a>
                                         </li>
@@ -211,6 +211,10 @@
                     {
                             var outView=document.getElementById("logBut");
                             outView.innerHTML = "<input onclick='logoutClick()' type='submit' class='btn btn-default' value='Выйти' style='background-color: #eee;'/>";
+                            var e = document.getElementById("ulmua");
+                            var newLi = document.createElement('li');
+                            newLi.innerHTML = "<a href='/BookingGym/view/clients.html'>Клиенты</a>";
+                            e.appendChild(newLi);
                     }
                  }
                   document.getElementById("form").style.visibility = 'visible';

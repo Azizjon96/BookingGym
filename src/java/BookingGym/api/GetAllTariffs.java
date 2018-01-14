@@ -37,11 +37,11 @@ public class GetAllTariffs extends HttpServlet {
              System.out.println("1");
                      try  {
                 TariffController tariffController = new TariffController();
-                System.out.println("11");
+                //System.out.println("11");
                 List<Tariff> tariff =  tariffController.getAllTariffs();
-                System.out.println("111");
+                //System.out.println("111");
                 String json=JsonTariffMapper.toJson(tariff);
-                System.out.println("json"+json);
+                //System.out.println("json"+json);
                 out.println(json);
                     }
                     catch( Exception e){
