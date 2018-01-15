@@ -1,4 +1,3 @@
-
 class AdminController
 {
     getAllAdmin()
@@ -7,7 +6,7 @@ class AdminController
         return adminService.getAllAdmin();
     }
     authentication()
-    {   
+    {  
         var data=this.getAllAdmin();
         var authAdmin=document.form.inputlogin.value;
         var authPassword=document.form.inputpass.value;

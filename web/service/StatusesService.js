@@ -2,7 +2,7 @@ class StatusesService{
 
         updateStateses(json)
             {
-                 alert("updateStateses...");
+                        //alert("updateStateses...");
                  var request = new XMLHttpRequest();
                  request.open('GET', '/BookingGym/UpdateStatuses?json=' + json, false);
                  request.send();

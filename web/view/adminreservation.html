@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список тарифов</title>
+    
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../lib/css/style.css" rel="stylesheet">
+    <script src="../service/ClientService.js"></script>
+    <script src="../controllers/ClientController.js"></script>
+    <script src="../service/StatusesService.js"></script>
+    <script src="../controllers/StatusesController.js"></script>
+    <script src="../service/AdminService.js"></script>
+    <script src="../controllers/AdminController.js"></script>
+    <script src="../service/ReservationService.js"></script>
+    <script src="../controllers/ReservationController.js"></script>
+    
+    <script>
+
+            function addReservationAdmin() {   
+                        alert("Проверка");
+                
+                if(document.form1.id.value == "")
+                {
+                alert("Пожалуйста заполните поле 'Номер клиента'");
+				return false;
+                }
+                
+                if(document.form1.hall.value == "")
+                {
+                alert("Пожалуйста заполните поле 'Зал'");
+				return false;
+                }
+	
+                if(document.form1.BDate.value == "")
+                {
+                alert("Пожалуйста введите дату");
+				return false;
+                }     
+                if(document.form1.EDate.value == "")
+                {
+                alert("Пожалуйста введите дату");
+				return false;
+                }
+                
+		if(document.form1.tariff.value == "")
+                {
+                alert("Номер тарифа необходимов вести");
+				return false;
+                }
+
+                var resController = new ReservationController();
+                var count1=resController.insertReservation();     
+                //alert("Ваша заявка принята!");
+                if(count1 == 1){
+                document.getElementById("container").innerHTML = "<h2>Заявка принята!</h2>";
+                }
+                 else
+                 {
+                  document.getElementById("container").innerHTML = "<h2>Повторите отправку позже...!</h2>";
+                 }
+             }
+             function loginClick()
+            {  
+                var count=0;
+                var conroller = new AdminController(); 
+                var count = conroller.authentication();
+                var login = document.form.inputlogin.value;
+                var pass = document.form.inputpass.value;
+                if(count==1)
+                {
+                    document.cookie = "login=" + login+";path=/";
+                    document.cookie = "password=" + pass+";path=/"; 
+                }
+                else if((login=="")||(pass=="")){alert("Введите логин и пароль!");}
+                else{alert("Вход не выполнен. Проверьте введенные данные!");}
+            }
+            function logoutClick()
+            {
+               document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+                location.reload();                
+            }
+        </script>
+    
+    <style type="text/css">
+    * { padding:0px; margin:0px; outline:none; }
+    html,body { width:100%; height:100%; color:#000; font:11px arial; text-align:left; }
+    .clr { position:relative; display:block; height:0%; clear:both; }
+    .writter { width:100%; height:100%; min-width:1000px; }
+    .header { background:url('') no-repeat #894634; width:100%; height:100px; }
+    .content { width:100%; clear:both; }
+    .block-l { background:url('') no-repeat #002137; float:left; width:20%; min-height:700px; text-align:left; }
+    .block-r { background:url('') no-repeat #f0ffff; float:right; width:80%; min-height:700px; 
+       text-align:left; padding: 3%; color: #051f35;font-size: 140%;}
+    .footer { background:url('') no-repeat #343434; height:80px; line-height:120px; font-size:14px; }
+    </style> 
+  </head>
+  
+ 
+  <body>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                  </button>
+              <a class="navbar-brand" href="../index.html">BookingGym</a>
+            </div>
+            <form role="form" name="form" id="form"  style = "visibility:hidden;">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-right" role="search" id="logBut">
+                       <input style="width: 100px; height: 30px;" type="text" class="form-control" name = "inputlogin" id="inputlogin"/>
+                       <input style="width: 100px; height: 30px;" type="password" class="form-control" name = "inputpass" id="inputpass"/>
+                       <input onclick="loginClick()" type = "submit" class="btn btn-default" value="Войти" style="background-color: #ddd;"/>
+                </div>
+            </div>
+            </form>
+          </div>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    
+
+
+<div class="writter" align="center">
+<div class="clr"></div>
+<div class="content">
+<div class="block-l">
+
+                                    <ul class="nav" id = "ulmua">
+                                        <li>
+                                            <a href="/BookingGym/view/tariffs.html">Тарифы</a>
+                                        </li>
+                                        <li>
+                                            <a href="/BookingGym/view/reservation.html">Забронировать</a> 
+                                        </li>
+                                        <li>
+                                           <a href="/BookingGym/view/info.html">О Нас</a>
+                                        </li>
+                                    </ul>
+                                
+</div>
+    <div class="block-r">
+<div id="page-content-wrapper">
+                    <div class="container" id = "container">
+                        <div class="row">
+                            <div class="col-lg-12 col-lg-offset-0">
+                                <div class="container">
+                                    <div id="fancy-list-group">
+                                      <div class="row">
+                                        <div>                                          
+                                            <form class="form-horizontal" role="form" name="form1">
+                                                <h3><b>Форма заполнения бронирования</b></h3>
+                                                 <div class="form-group" style="margin-top: 20px;">
+                                                    <label for="id" class="col-sm-4 control-label">Номер клиента</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" id="id" name="id" placeholder="Номер" class="form-control" autofocus>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 20px;">
+                                                    <label for="Hall" class="col-sm-4 control-label">Зал</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" id="hall" name="hall" placeholder="Зал" class="form-control" autofocus>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 20px;">
+                                                    <label for="BDate" class="col-sm-4 control-label">Начало посещений</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="date" id="BDate" placeholder="Начало посещений" name="BDate" class="form-control" autofocus>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 20px;">
+                                                    <label for="EDate" class="col-sm-4 control-label">Конец посещений</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="date" id="EDate" placeholder="Конец посещений" name="EDate" class="form-control" autofocus>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 20px;">
+                                                    <label for="tariff" class="col-sm-4 control-label">Номер тарифа</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" id="tariff" placeholder="Номер тарифа"  name="tariff" class="form-control" autofocus>
+                                                    </div>
+                                                </div>                 
+                                                <div class="form-group">
+                                                    <div class="col-sm-6 col-sm-offset-4">
+                                                        <div onclick="addReservationAdmin()" class="btn btn-md btn-warning"><a href="#" style="color: #fff; text-decoration: none;"><i class="fa fa-star-o" aria-hidden="true"></i>Create</a> </div>
+                                                    </div>
+                                                </div>
+                                                <div id="formAppointment"></div>
+                                            </form> <!-- /form -->  
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+<div class="clr"></div>
+<div class="footer">
+Авторы
+</div>
+</div>  
+            
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="..lib/js/bootstrap.min.js"></script>
+    <script>
+            window.onload = function ()
+            {
+                document.form.inputlogin.value = "";
+                document.form.inputpass.value= "";
+                var login = getCookie("login");
+                var pass = getCookie("password");
+                if (login != undefined){
+                    document.form.inputlogin.value = login;
+                    document.form.inputpass.value = pass;
+                    var conroller = new AdminController(); 
+                    var count = conroller.authentication();
+                    if (count == 1)
+                    {
+                            var outView=document.getElementById("logBut");
+                            outView.innerHTML = "<input onclick='logoutClick()' type='submit' class='btn btn-default' value='Выйти' style='background-color: #eee;'/>";
+                            
+                            
+                            var e = document.getElementById("ulmua");
+                            var newLi = document.createElement('li');
+                            newLi.innerHTML = "<a href='/BookingGym/view/allclients.html'>Все клиенты</a>";
+                            e.appendChild(newLi);
+                            var newLi1 = document.createElement('li');
+                            newLi1.innerHTML = "<a href='/BookingGym/view/newclients.html'>Новые клиенты</a>";
+                            e.appendChild(newLi1);
+                    }
+                 }
+                  document.getElementById("form").style.visibility = 'visible';
+            }
+                function getCookie(name) {
+                var matches = document.cookie.match(new RegExp(
+                  "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }; 
+    </script> 
+</body>
+</html>
+                      
+
+   
+

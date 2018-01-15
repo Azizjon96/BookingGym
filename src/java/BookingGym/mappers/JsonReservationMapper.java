@@ -49,6 +49,13 @@ public class JsonReservationMapper {
     }
 
     public static Reservation fromJSON(String jsonObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                       try {
+            ObjectMapper mapper = new ObjectMapper();
+            Reservation cl = mapper.readValue(jsonObject, Reservation.class);
+            return cl;
+        } catch (IOException ex) {
+            Logger.getLogger(JsonTariffMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }

@@ -52,7 +52,7 @@ class ClientController
         var clientService = new ClientService();
         var client = clientService.getNewClient();
         var clientView=document.getElementById("client");
-        var result="<h3>Список клиентов</h3>";
+        var result="<h3>Список новых клиентов</h3>";
         for(var i=0; i<client.length;i++)
         {
             result+= "<div  style='border: 2px solid red; margin-top: 3%; padding: 2%; '>\n\

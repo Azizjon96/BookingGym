@@ -111,15 +111,18 @@
     <script>
             window.onload = function ()
             {
+                
                 document.form.inputlogin.value = "";
                 document.form.inputpass.value= "";
                 var login = getCookie("login");
                 var pass = getCookie("password");
                 
                 if (login != undefined){
+                    
                     document.form.inputlogin.value = login;
                     document.form.inputpass.value = pass;
-                    var conroller = new AdminController(); 
+                    var conroller = new AdminController();
+
                     var count = conroller.authentication();
                     if (count == 1)
                     {

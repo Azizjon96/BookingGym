@@ -42,8 +42,8 @@
             function yesClick(id){
                 var conroller = new StatusesController(id); 
                 var count = conroller.approved();
+                window.location = '/BookingGym/view/adminreservation.html';
                 alert("Успех");
-                location.reload();
             }
                 
             function noClick(id){
