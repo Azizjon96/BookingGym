@@ -65,7 +65,4 @@ public ClientsDal() {
       return list;
     }
 
-    Clients selectByPhone(int phone) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

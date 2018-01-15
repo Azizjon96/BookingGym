@@ -11,7 +11,35 @@
 
     <select id = "selectAll" resultMap = "result"> 
        SELECT * FROM admin;  
-    </select> 
+    </select>
+    
+        
+    <insert id = "insert" parameterType = "BookingGym.model.Admin"> 
+       INSERT INTO admin
+            (a_id, 
+             a_login,
+             a_pass)
+       VALUES 
+            (#{a_id}, 
+             #{a_login}, 
+             #{a_pass});
+     </insert>
+     
+     <delete id = "delete" parameterType = "int"> 
+       DELETE  from admin WHERE a_id = #{a_id}; 
+    </delete>
+    
+    <select id = "selectById" parameterType = "int" resultMap = "result"> 
+        SELECT * FROM admin WHERE a_id= #{a_id}; 
+    </select>
+    
+    <update id = "update" parameterType = "BookingGym.model.Admin"> 
+       UPDATE admin SET  
+        a_login = #{a_login},
+        a_pass = #{a_pass}
+        WHERE a_id = #{a_id}; 
+    </update>
+       
 </mapper> 
 
 

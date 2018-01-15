@@ -19,61 +19,28 @@ public class StatusesDalTest {
 
     @Test
     public void testSelectAll() {
-         System.out.println("StatusesDal selectAll");
-       StatusesDal dal = new StatusesDal ();
+        System.out.println("TariffDal selectAll");
+        StatusesDal dal = new  StatusesDal();
         List<Statuses> list = dal.selectAll();
         assertTrue(list!=null && list.size()>0);
     }
 
     @Test
-    public void testSelectById() {
-        
- System.out.println("selectById");
-        int id = 0;
-       StatusesDal instance = new StatusesDal();
-        Statuses expResult = null;
-       Statuses result = instance.selectById(valueOf(id));
-        assertEquals(expResult, result);
+    public void testSelectById() {        
+        System.out.println("selectById");
+        int id = 1;
+        StatusesDal T = new StatusesDal();
+        Statuses result = T.selectById(id);
+        assertTrue(result!=null && result.getS_id_status()==id);
     }
 
-    @Test
-    public void testInsert() {
-          System.out.println("insert");
-        Statuses statuses = null;
-       StatusesDal instance = new StatusesDal();
-        int expResult = 0;
-        int result = instance.insert(statuses);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     @Test
     public void testUpdate() {
-System.out.println("update");
-        Statuses statuses = null;
+        System.out.println("update");
+        Statuses f = new Statuses(12, true, false, false);
         StatusesDal instance = new StatusesDal();
-        int expResult = 0;
-        int result = instance.update(statuses);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int result = instance.update(f);
+        assertEquals(1, result);
     }
-
-    @Test
-    public void testDelete() {
-System.out.println("delete");
-          Statuses   statuses = null;
-          StatusesDal instance = new   StatusesDal();
-        int expResult = 0;
-        int result = instance.delete( 1);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    private int valueOf(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

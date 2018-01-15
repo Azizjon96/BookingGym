@@ -37,7 +37,7 @@ public class ReservationTest {
 
     @Test
     public void testCreateReservation() {
-       System.out.println("test create Reservation");
+
        Date date = new Date(2017,9,25);
        Reservation reservation = new Reservation(1, 1, "hall2", date, date,1,1);
         

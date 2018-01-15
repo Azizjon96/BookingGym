@@ -47,7 +47,7 @@ public class TariffDal extends BaseDal{
     }
 
     
-        public Tariff deleteById(int id)
+    public Tariff deleteById(int id)
     {
         SqlSession session = sqlSessionFactory.openSession(); 
         Tariff abonent =  session.selectOne("tariff.deleteById",id);
@@ -55,5 +55,13 @@ public class TariffDal extends BaseDal{
         session.close(); 
         return abonent;
     }
+    public int delete(int id)
+    {
+      SqlSession session = sqlSessionFactory.openSession(); 
+      int count =  session.delete("tariff.delete",id);
+      session.commit();
+      session.close();
+      return count;
+    }   
     
 }

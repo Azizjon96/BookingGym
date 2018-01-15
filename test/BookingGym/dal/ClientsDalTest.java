@@ -18,65 +18,36 @@ public class ClientsDalTest {
     @Test
     public void testUpdate() {
         System.out.println("update");
-        Clients clients = null;
+        Clients clients = new Clients(12, "5", "1", "1", "III");
         ClientsDal instance = new ClientsDal();
-        int expResult = 0;
         int result = instance.update(clients);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(1, result);
     }
 
-    @Test
-    public void testInsert() {
-           System.out.println("insert");
-        Clients clients = null;
-        ClientsDal instance = new ClientsDal();
-        int expResult = 0;
-        int result = instance.insert(clients);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testDelete() {
-   
-            System.out.println("delete");
-         Clients  clients = null;
-         ClientsDal instance = new  ClientsDal();
-        int expResult = 0;
-        int result = instance.delete(1);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     @Test
     public void testSelectById() {
         System.out.println("selectById");
-        int id = 0;
-       ClientsDal instance = new ClientsDal();
-        Clients expResult = null;
-        Clients result = instance.selectById(valueOf(id));
-        assertEquals(expResult, result);
-        // TODO review the generated test code 
+        int id = 19;
+        ClientsDal c = new ClientsDal();
+        Clients result = c.selectById(id);
+        assertTrue(result!=null && result.getC_id_client()==id);
     }
 
     @Test
     public void testSelectByPhone() {
            System.out.println("SelectByPhone");
-        int phone = 0;
-       ClientsDal instance = new ClientsDal();
-        Clients expResult = null;
-        Clients result = instance.selectByPhone(valueOf(phone));
-        assertEquals(expResult, result);
+        String phone = "III";
+        ClientsDal c = new ClientsDal();
+        Clients result = c.selectByPhone(phone);
+        String num = result.getC_phone();
+        assertTrue(num.equals(phone));
      
     }
 
     @Test
     public void testSelectAll() {
-        System.out.println("ClientsDal selectAll");
+        System.out.println("selectAll");
         ClientsDal dal = new ClientsDal ();
         List<Clients> list = dal.selectAll();
         assertTrue(list!=null && list.size()>0);

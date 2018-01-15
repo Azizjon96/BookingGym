@@ -22,7 +22,7 @@
     </select> 
     
     <insert id = "insert" parameterType = "BookingGym.model.Reservation"> 
-       INSERT INTO news 
+       INSERT INTO reservation 
             (r_id_reservation, 
              r_id_client, 
              r_hall,
@@ -41,10 +41,10 @@
     </insert>
     
     <update id = "update" parameterType = "BookingGym.model.Reservation"> 
-       UPDATE news SET 
+       UPDATE reservation SET 
         r_hall = #{r_hall}, 
         r_id_client = #{r_id_client}, 
-        begin_visits = #{begin_visits},
+        r_begin_visits = #{r_begin_visits},
         r_end_visits = #{r_end_visits},
         r_id_tariff = #{r_id_tariff},
         r_id_status = #{r_id_status}
@@ -55,7 +55,7 @@
         select * from reservation where r_id_client = #{r_id_client};
     </select>
 
-    <delete id = "delete" parameterType = "int">                             // id же варчар %(
+    <delete id = "delete" parameterType = "int">                         
        DELETE from reservation WHERE r_id_reservation = #{r_id_reservation}; 
     </delete>
 </mapper> 

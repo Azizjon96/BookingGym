@@ -44,7 +44,7 @@
     </update>
 
     <delete id = "delete" parameterType = "int"> 
-       DELETE tariff WHERE t_id_tariff = #{t_id_tariff}; 
+       DELETE  from tariff WHERE t_id_tariff = #{t_id_tariff}; 
     </delete>
 </mapper> 
 
